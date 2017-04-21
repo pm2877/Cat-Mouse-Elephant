@@ -1,0 +1,270 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.parthmehta.cat_mouse_elephant.GameCenterActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/gameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_above="@+id/chooseLabel"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/catButton"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.11"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/cat" />
+
+            <ImageButton
+                android:id="@+id/mouseButton"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="112dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.41"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/mouse" />
+
+            <ImageButton
+                android:id="@+id/elephantButton"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.01"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/elephant" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/computerLabel"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/computerImageView"
+            android:layout_marginTop="34dp"
+            android:background="@color/black_overlay"
+            android:padding="10dp"
+            android:text="Computer"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/playerLabel"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/computerLabel"
+            android:layout_alignBottom="@+id/computerLabel"
+            android:layout_alignParentEnd="true"
+            android:background="@color/black_overlay"
+            android:padding="10dp"
+            android:text="Player"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/chooseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1.11"
+            android:background="@color/black_overlay"
+            android:text="Choose your Animal"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="35sp"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/playerScoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/playerLabel"
+            android:layout_alignStart="@+id/playerLabel"
+            android:layout_alignTop="@+id/computerScoreLabel"
+            android:background="@color/white_overlay"
+            android:padding="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/computerScoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/computerLabel"
+            android:layout_alignStart="@+id/computerLabel"
+            android:layout_below="@+id/playerLabel"
+            android:background="@color/white_overlay"
+            android:padding="10dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/computerImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignStart="@+id/playerImageView"
+            android:layout_below="@+id/computerAnimalLabel" />
+
+        <ImageView
+            android:id="@+id/playerImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/playerScoreLabel"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/winnerLabel"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="monospace"
+            android:text="Let's Play!"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/titleLabel"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:gravity="center"
+            android:text="First to Score 5 Wins!"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/computerAnimalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/titleLabel"
+            android:layout_weight="1.11"
+            android:background="@color/black_overlay"
+            android:text="Computer's Animal"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="35sp"
+            android:typeface="monospace" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gameOverLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_overlay"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="215dp"
+            android:layout_marginStart="74dp"
+            android:background="@android:drawable/ic_notification_overlay"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:text="Menu"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/quitButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gameOverLabel"
+            android:layout_marginStart="50dp"
+            android:layout_toEndOf="@+id/restartButton"
+            android:background="@android:drawable/ic_notification_overlay"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:text="Quit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/gameOverLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/restartButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:text="Game Over!"
+            android:textColor="@android:color/background_light"
+            android:textSize="40sp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

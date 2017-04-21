@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cat-Mouse-Elephant</string>
+
+    <string name="title_activity_game_center">Play the Game</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

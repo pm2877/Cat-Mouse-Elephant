@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="com.parthmehta.cat_mouse_elephant.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/aboutLayout"
+        android:layout_width="0dp"
+        android:layout_height="720dp"
+        android:background="@color/black_overlay"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="132dp"
+            android:background="@android:drawable/ic_notification_overlay"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:text="Return"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/aboutTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="This game is called Cat-Mouse-Elephant. The objective of the game is to score 5 points before the computer scores 5 points. To score a point, you must win a round. During each round, you have to select 1 animal: cat, mouse or elephant. The computer will also select an animal. After you select your animal for the round, there will be a face-off. In the face-off, cat beats mouse, elephant beats cat, and mouse beats the elephant. If your animal wins, you score a point. If your animal loses, computer gets a point. If you both choose the same animal, no one gets points. The first to score 5 points wins the game. Enjoy! "
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="24sp"/>
+        </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:background="@color/title_overlay"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Cat-Mouse-Elephant"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/titleColor"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RelativeLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="400dp"
+        android:layout_height="643dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Button
+            android:id="@+id/buttonPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/round_button"
+            android:fontFamily="casual"
+            android:text="Play"
+            android:textAlignment="center"
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="524dp" />
+
+        <Button
+            android:id="@+id/buttonQuit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonAbout"
+            android:layout_alignBottom="@+id/buttonAbout"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@android:drawable/ic_notification_overlay"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:text="Quit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:typeface="normal"
+            tools:layout_editor_absoluteX="297dp"
+            tools:layout_editor_absoluteY="475dp" />
+
+        <Button
+            android:id="@+id/buttonAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="43dp"
+            android:layout_marginStart="27dp"
+            android:layout_toEndOf="@+id/menuLayout"
+            android:background="@android:drawable/ic_notification_overlay"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:text="About"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white_overlay_medium"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="475dp" />
+
+        <ImageView
+            android:id="@+id/imageViewCat"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_above="@+id/imageViewQuestion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="27dp"
+            app:srcCompat="@drawable/cat" />
+
+        <ImageView
+            android:id="@+id/imageViewElephant"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_alignTop="@+id/imageViewMouse"
+            android:layout_toStartOf="@+id/imageViewCat"
+            app:srcCompat="@drawable/elephant" />
+
+        <ImageView
+            android:id="@+id/imageViewMouse"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_above="@+id/buttonPlay"
+            android:layout_marginBottom="41dp"
+            android:layout_toEndOf="@+id/imageViewCat"
+            app:srcCompat="@drawable/mouse" />
+
+        <ImageView
+            android:id="@+id/imageViewQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageViewElephant"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:alpha="0.75"
+            app:srcCompat="@drawable/question_mark" />
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonPlay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dp"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
